@@ -1,0 +1,17 @@
+name: PR Check - version uprev in pom.xml
+
+on: [pull_request]
+
+jobs:
+  pom-version-check:
+    name: Verify pom.xml version changed
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch the repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Checkout the PR branch (to track origin)
+        run: git checkout ${{ github.event.pull_request.head.ref }}
+      - name: See if the diff contains the <version>
+        run: git diff origin/${{ github.event.pull_request.base.ref }} another_file.txt | grep '<version>'
