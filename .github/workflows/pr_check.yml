@@ -1,0 +1,13 @@
+name: PR Check - version uprev in pom.xml
+
+on: [pull_request]
+
+jobs:
+  pom-version-check:
+    name: Verify that the version in pom.xml has changed
+    runs-on: ubuntu-latest
+    steps:
+      - name: See if the diff contains the <version>
+        uses: edwagner/check-pom-uprev-action@v1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"

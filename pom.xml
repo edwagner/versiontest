@@ -4,7 +4,7 @@
 
         <groupId>com.invitationhomes</groupId>
         <artifactId>mulesoft-salesforce-marketing-cloud</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>mule-application</packaging>
 
         <name>mulesoft-salesforce-marketing-cloud</name>
